@@ -1,6 +1,8 @@
 #!/bin/bash
 apt-get update -y
 apt-get upgrade -y
+
+
 apt-get install git -y
 apt-get install python3 -y
 apt install python3-pip -y
@@ -14,6 +16,6 @@ apt-get install python3.10-dev default-libmysqlclient-dev -y
 pip3 install -r requirements.txt
 cd src
 python3 manage.py collectstatic --noinput
-# python3 manage.py makemigrations
-# python3 manage.py migrate
+python3 manage.py makemigrations
+python3 manage.py migrate
 python3 manage.py runserver 0.0.0.0:80
